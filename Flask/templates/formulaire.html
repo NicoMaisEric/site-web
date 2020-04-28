@@ -1,0 +1,47 @@
+<! doctype html >
+<html lang ="fr">
+	<head >
+		<meta charset ="utf -8">
+		<title>SITE NICOLAS</title >
+		<link href="static/css.css" rel="stylesheet" media="all" type="text/css"> 
+	</head>
+	
+		<embed src="{{url_for('static',filename = 'bienvenue.mp3')}}" autostart="true" loop="true" hidden="true"></embed>
+		<h1>Site créé par Nicolas, toute reproduction interdite</h1>
+		<h2> Bienvenue {{ prenom }} {{ nom }}!</h2>
+		<h6> Votre MasterCard "{{ codecb }}" a bien été enregistrée sur nos services ! </h6>
+		<body>
+		<div id="div_horloge"></div>
+		<script type="text/javascript">
+		window.onload=function() {
+		  horloge('div_horloge');
+		};
+		 
+		function horloge(el) {
+		  if(typeof el=="string") { el = document.getElementById(el); }
+		  function actualiser() {
+			var date = new Date();
+			var str = date.getHours();
+			str += ':'+(date.getMinutes()<10?'0':'')+date.getMinutes();
+			str += ':'+(date.getSeconds()<10?'0':'')+date.getSeconds();
+			el.innerHTML = str;
+		  }
+		  actualiser();
+		  setInterval(actualiser,1000);
+		}
+		</script>
+		<p>Ce site est en phase expérimentale. <br>
+		Il contient pour le moment une calculatrice, une redirection automatique vers Raoult,<br>
+		Il dispose aussi d'un jeu flash dans la section "calculatrice" ci-dessous, de l'heure ci-dessus,<br>
+		Mais également des dernières actualités inédites de DeFalco en live !<br>
+		Profitez bien !</p >
+		<ul>
+			<li><a href="raoult">Tout savoir sur Didier Raoult !</a>
+			<li><a href="calculatrice" target="_blank">Calculatrice et Jeu !</a>
+			<li><a href="https://twitter.com/MarcdeFalco" target="_blank">Suivre l'actualité de De Falco !</a>
+		<br>
+		<br>
+		<embed src="{{url_for('static',filename = 'giphy.gif')}}"" width="500"/>
+		
+	</body>
+</html>

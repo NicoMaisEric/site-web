@@ -1,0 +1,33 @@
+<! doctype html >
+<html lang ="fr">
+	<head >
+		<meta charset ="utf -8">
+		<title >WEB Nico</title >
+		<style>
+		</style>
+	</head >
+	<body >
+		<embed src="{{url_for('static',filename = 'Swing.mp3')}}" autostart="true" loop="false" hidden="true"></embed>
+		<h1 >Site créé par Nicolas</h1 >
+		<p>Bonjour. Ce site a été créé par Nicolas et dispose de différentes fonctionnalités.<br>
+		 Pour disposer d'un accès, veuillez rentrer vos coordonnées <strong> PUIS </strong> cliquer sur le bouton</p>
+		<form action="http://localhost:5000/formulaire" method="post">
+			<div>
+				<label>Votre nom:</label><br>
+				<input type="text" id="name" name="nom">
+			</div>
+			<div>
+				<label>Votre prénom:</label><br>
+				<input type="text" id="nick" name="prénom">
+			</div>
+			<div>
+				<label>Code CB ?:</label><br>
+				<input type="text" id="code" name="codecb">
+			</div>
+			<div class="button">
+				<button type="submit">Cliquez pour être redirigé</button>
+			</div>
+		</form>
+
+	</body >
+</html >
